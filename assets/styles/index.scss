@@ -9,4 +9,11 @@ $black-color: #000;
   color: $white-color;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 25.3vh;
+  width: 70%;
+}
+
+.hide {
+  visibility: hidden;
 }
