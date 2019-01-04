@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe </title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,37 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <ul class="nav">
+      <ul class="nav-item">
+          <!-- sign up button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Sign Up
+          </button>
+          <!-- sign in button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Sign In
+          </button>
+        </ul>
+    </ul>
+        <h1>Tic Tac Toe</h1>
+
+<!-- Game board divs-->
+      <div class="container">
+        <div class="row">
+          <div class="col-4 box">1</div>
+          <div class="col-4 box">2</div>
+          <div class="col-4 box">3</div>
+        </div>
+        <div class="row">
+          <div class="col-4 box">4</div>
+          <div class="col-4 box">5</div>
+          <div class="col-4 box">6</div>
+        </div>
+        <div class="row">
+          <div class="col-4 box">7</div>
+          <div class="col-4 box">8</div>
+          <div class="col-4 box">9</div>
+        </div>
+      </div>
     </body>
 </html>

@@ -7,5 +7,10 @@
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+const gameBoard = ['', '', '', '', '', '', '', '', '']
+const playerO = {}
+const playerX = {}
+const currentPlayer = [playerX, playerO]
+
+
 })
