@@ -5,12 +5,11 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const events = require('./auth/events')
 
 $(() => {
-const gameBoard = ['', '', '', '', '', '', '', '', '']
-const playerO = {}
-const playerX = {}
-const currentPlayer = [playerX, playerO]
-
-
+  $('#sign-up').on('submit', events.onSignUp)
+  $('#sign-in').on('submit', events.onSignIn)
+  $('#change-password').on('submit', events.onChangePassword)
+  $('#signOutButton').on('click', events.onSignOut)
 })
