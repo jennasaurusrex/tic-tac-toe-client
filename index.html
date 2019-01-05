@@ -14,6 +14,7 @@
     <body>
       <ul class="nav">
       <ul class="nav-item">
+        <div class="container">
 
 <!-- sign up button trigger modal -->
           <button type="button" class="btn btn-primary hide" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
@@ -32,8 +33,10 @@
 
 <!-- log out button trigger -->
           <button type="button" class="btn btn-primary hide" id="signOutButton">Log Out</button>
+        </div>
         </ul>
     </ul>
+
 
 <!-- Sign Up Modal * COMPLETED *-->
     <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -126,25 +129,28 @@
     </div>
 
             <h1>Tic Tac Toe</h1>
+
+            <button type="button" class="btn btn-primary" id="start-game">Play a Game</button>
+            <button type="button" class="btn btn-primary" id="index-game">Find Games</button>
             <div id="user-message">
             </div>
 
 <!-- Game board divs-->
-      <div class="container">
-        <div class="row">
-          <div class="col-4 box">1</div>
-          <div class="col-4 box">2</div>
-          <div class="col-4 box">3</div>
+      <div class="container" id="game-board">
+        <div class="row row1">
+          <div id="cell1" class="col-4 box">&nbsp;</div>
+          <div id="cell2" class="col-4 box">&nbsp;</div>
+          <div id="cell3" class="col-4 box">&nbsp;</div>
         </div>
-        <div class="row">
-          <div class="col-4 box">4</div>
-          <div class="col-4 box">5</div>
-          <div class="col-4 box">6</div>
+        <div class="row row2">
+          <div id="cell4" class="col-4 box">&nbsp;</div>
+          <div id="cell5" class="col-4 box">&nbsp;</div>
+          <div id="cell6" class="col-4 box">&nbsp;</div>
         </div>
-        <div class="row">
-          <div class="col-4 box">7</div>
-          <div class="col-4 box">8</div>
-          <div class="col-4 box">9</div>
+        <div class="row row3">
+          <div id="cell7" class="col-4 box">&nbsp;</div>
+          <div id="cell8" class="col-4 box">&nbsp;</div>
+          <div id="cell9" class="col-4 box">&nbsp;</div>
         </div>
       </div>
     </body>

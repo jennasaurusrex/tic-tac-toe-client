@@ -2,6 +2,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const game = require('../game/events')
 $('#signInButton').removeClass('hide')
 $('#signUpButton').removeClass('hide')
 
