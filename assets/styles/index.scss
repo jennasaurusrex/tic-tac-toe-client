@@ -3,17 +3,17 @@ $background-color: #008080;
 $white-color: #fff;
 $black-color: #000;
 
+.hide {
+  visibility: hidden;
+}
+
 .box {
+  align-items: center;
   background-color: $background-color;
   border: 2px solid $black-color;
   color: $white-color;
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 25.3vh;
+  justify-content: center;
   width: 70%;
 }
-
-//.hide {
-//  visibility: hidden;
-//}
