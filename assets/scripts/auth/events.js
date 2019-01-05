@@ -2,6 +2,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+$('#signInButton').removeClass('hide')
+$('#signUpButton').removeClass('hide')
 
 const onSignUp = (event) => {
   event.preventDefault()
@@ -12,6 +14,7 @@ const onSignUp = (event) => {
     .catch(ui.onSignUpFailure)
 
   $('form').trigger('reset')
+  $('#signUpModal').modal('hide')
 }
 
 const onSignIn = event => {
@@ -23,6 +26,7 @@ const onSignIn = event => {
     .catch(ui.onSignInFailure)
 
   $('form').trigger('reset')
+  $('#signInModal').modal('hide')
 }
 
 const onChangePassword = event => {
@@ -34,6 +38,7 @@ const onChangePassword = event => {
     .catch(ui.onChangePasswordFailure)
 
   $('form').trigger('reset')
+  $('#changePasswordModal').modal('hide')
 }
 
 const onSignOut = (event) => {
@@ -44,6 +49,7 @@ const onSignOut = (event) => {
     .catch(ui.onSignOutFailure)
 
   $('form').trigger('reset')
+  $('#signOutModal').modal('hide')
 }
 
 module.exports = {

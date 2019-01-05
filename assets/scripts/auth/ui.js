@@ -10,6 +10,10 @@ const onSignUpFailure = (response) => {
 const onSignInSuccess = (response) => {
   $('#user-message').text(`Welcome back, ${response.user.email}!`)
   store.user = response.user
+  $('#changePasswordButton').removeClass('hide')
+  $('#signOutButton').removeClass('hide')
+  $('#signInButton').addClass('hide')
+  $('#signUpButton').addClass('hide')
 }
 const onSignInFailure = (response) => {
   $('#user-message').text('Error signing in. Try again.')
@@ -23,6 +27,10 @@ const onChangePasswordFailure = (response) => {
 const onSignOutSuccess = () => {
   $('#user-message').text('Successfully signed out.')
   store.user = null
+  $('#signInButton').removeClass('hide')
+  $('#signUpButton').removeClass('hide')
+  $('#changePasswordButton').addClass('hide')
+  $('#signOutButton').addClass('hide')
 }
 const onSignOutFailure = (response) => {
   $('#user-message').text('Error signing out. Try again.')
