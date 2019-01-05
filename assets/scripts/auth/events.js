@@ -9,10 +9,9 @@ const onSignUp = (event) => {
 
   api.signUp(formData)
     .then(ui.onSignUpSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.onSignUpFailure)
 
   $('form').trigger('reset')
-  $('#signUpModal').modal('hide')
 }
 
 const onSignIn = event => {
@@ -21,10 +20,9 @@ const onSignIn = event => {
 
   api.signIn(formData)
     .then(ui.onSignInSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.onSignInFailure)
 
   $('form').trigger('reset')
-  $('#signInModal').modal('hide')
 }
 
 const onChangePassword = event => {
@@ -33,10 +31,9 @@ const onChangePassword = event => {
 
   api.changePassword(formData)
     .then(ui.onChangePasswordSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.onChangePasswordFailure)
 
   $('form').trigger('reset')
-  $('#changePasswordModal').modal('hide')
 }
 
 const onSignOut = (event) => {
@@ -44,7 +41,7 @@ const onSignOut = (event) => {
 
   api.signOut()
     .then(ui.onSignOutSuccess)
-    .catch(ui.onFailure)
+    .catch(ui.onSignOutFailure)
 
   $('form').trigger('reset')
 }

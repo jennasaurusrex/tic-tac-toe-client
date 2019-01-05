@@ -2,24 +2,30 @@
 const store = require('../store')
 
 const onSignUpSuccess = (response) => {
-  console.log(response)
-  $('#user-message').text('Successfully signed up').css('color', 'black')
+  $('#user-message').text('Successfully signed up')
+}
+const onSignUpFailure = (response) => {
+  $('#user-message').text('Error signing up. Try again.')
 }
 const onSignInSuccess = (response) => {
-  $('#user-message').text(`Successfully signed ${response.user.email} in`).css('color', 'black')
+  $('#user-message').text(`Welcome back, ${response.user.email}!`)
   store.user = response.user
-  console.log(store)
+}
+const onSignInFailure = (response) => {
+  $('#user-message').text('Error signing in. Try again.')
 }
 const onChangePasswordSuccess = () => {
-  $('#user-message').text('Successfully changed password!').css('color', 'black')
+  $('#user-message').text('Successfully changed password.')
+}
+const onChangePasswordFailure = (response) => {
+  $('#user-message').text('Could not change password. Try again.')
 }
 const onSignOutSuccess = () => {
-  $('#user-message').text('Successfully signed out.').css('color', 'black')
+  $('#user-message').text('Successfully signed out.')
   store.user = null
 }
-const onFailure = (response) => {
-  console.log(response)
-  $('#user-message').text('Something went wrong. Try again.')
+const onSignOutFailure = (response) => {
+  $('#user-message').text('Error signing out. Try again.')
 }
 
 module.exports = {
@@ -27,5 +33,8 @@ module.exports = {
   onSignInSuccess,
   onChangePasswordSuccess,
   onSignOutSuccess,
-  onFailure
+  onSignUpFailure,
+  onSignInFailure,
+  onChangePasswordFailure,
+  onSignOutFailure
 }
