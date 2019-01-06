@@ -14,17 +14,26 @@ const onStartGameFailure = (response) => {
   console.log('response is' + response)
   $('#user-message').text('Error creating a game.')
 }
-const onFindGamesSuccess = (event) => {
-  $('#user-message').text(`Game Plays: ${event.games.length}`)
+const onFindGamesSuccess = (response) => {
+  $('#user-message').text(`Game Plays: ${response.games.length}`)
 }
 const onFindGamesFailure = (response) => {
   console.log('response is' + response)
   $('#user-message').text('Error finding games.')
+}
+const onUpdateGameSuccess = (response) => {
+  console.log('response is ' + response)
+}
+const onUpdateGameFailure = (response) => {
+  console.log('response is' + response)
+  $('#user-message').text('Error updating game.')
 }
 
 module.exports = {
   onStartGameSuccess,
   onStartGameFailure,
   onFindGamesSuccess,
-  onFindGamesFailure
+  onFindGamesFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure
 }

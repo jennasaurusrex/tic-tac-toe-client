@@ -16,4 +16,5 @@ $(() => {
 
   $('#start-game').on('click', gameEvents.onStartGame)
   $('#index-game').on('click', gameEvents.onFindGames)
+  $('.box').on('click', gameEvents.onUpdateGame)
 })

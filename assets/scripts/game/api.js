@@ -2,15 +2,15 @@
 const config = require('../config')
 const store = require('../store')
 
-const startGame = () => {
+const startGame = (formData) => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
     headers: {
+      contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
-    contentType: 'application/json',
-    game: ''
+    data: formData
   })
 }
 const findGames = () => {
@@ -23,8 +23,28 @@ const findGames = () => {
     }
   })
 }
+const updateGame = (index, value) => {
+  return $.ajax({
+    url: config.apiUrl + 'games/' + store.game,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: JSON.stringify({
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value
+        },
+        over: false
+      }
+    })
+  })
+}
 
 module.exports = {
   startGame,
-  findGames
+  findGames,
+  updateGame
 }
