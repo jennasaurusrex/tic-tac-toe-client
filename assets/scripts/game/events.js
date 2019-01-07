@@ -2,7 +2,6 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require('./api')
-const store = require('../store')
 
 const onStartGame = (event) => {
   event.preventDefault()
@@ -20,10 +19,8 @@ const onFindGames = (event) => {
     .then(ui.onFindGamesSuccess)
     .catch(ui.onFindGamesFailure)
 }
-const onUpdateGame = (event) => {
-  event.preventDefault()
-  // broken
-  api.updateGame()
+const onUpdateGame = (id, value) => {
+  api.updateGame(id, value)
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)
 }

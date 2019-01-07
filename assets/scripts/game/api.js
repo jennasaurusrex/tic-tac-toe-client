@@ -24,23 +24,22 @@ const findGames = () => {
   })
 }
 const updateGame = (id, value) => {
-  console.log('store.game is: ', store.game)
   return $.ajax({
-    url: config.apiUrl + '/games/' + store.game,
+    url: config.apiUrl + 'games/' + store.game.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
       Authorization: 'Token token=' + store.user.token
     },
-    data: JSON.stringify({
+    data: {
       'game': {
         'cell': {
           'index': id,
           'value': value
         },
-        over: false
+        'over': false
       }
-    })
+    }
   })
 }
 

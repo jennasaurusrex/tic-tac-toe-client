@@ -1,15 +1,17 @@
 'use strict'
 const store = require('../store')
+const logic = require('./logic')
 
 const onStartGameSuccess = (response) => {
-  $('#user-message').text('Successfully created a new game. Player ones turn.')
   const gameData = response.game
   const cells = gameData.cells
   for (let i = 0; i < cells.length; i++) {
     const cellId = 'cell' + i.toString()
     $(cellId).text = cells[i]
   }
-  store.game = response.game
+  store.game = gameData
+  $('#user-message').text('Successfully created a new game. Player ones turn.')
+  console.log('store.game is:', store.game)
   // console.log('store is', store)
 }
 const onStartGameFailure = (response) => {
@@ -24,9 +26,7 @@ const onFindGamesFailure = (response) => {
   $('#user-message').text('Error finding games.')
 }
 const onUpdateGameSuccess = (response) => {
-  console.log('response is: ', response)
-  store.game = response.game
-  console.log('store is ', store.game)
+  console.log('success response is: ', response)
 }
 const onUpdateGameFailure = (response) => {
   console.log('response is: ', response)
