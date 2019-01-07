@@ -23,7 +23,6 @@ const onFindGames = (event) => {
 const onUpdateGame = (event) => {
   event.preventDefault()
   // broken
-  console.log('store is ' + store.game)
   api.updateGame()
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)

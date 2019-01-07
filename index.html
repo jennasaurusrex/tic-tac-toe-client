@@ -6,36 +6,39 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="header">
+        <img class="xo" src="https://imgur.com/djt2eYo.jpg" alt="tictactoe-img">
+      </div>
       <ul class="nav">
       <ul class="nav-item">
         <div class="container">
 
 <!-- sign up button trigger modal -->
-          <button type="button" class="btn btn-primary hide" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
+          <button type="button" class="btn btn-secondary hide" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
             Sign Up
           </button>
 
 <!-- sign in button trigger modal -->
-          <button type="button" class="btn btn-primary hide" id="signInButton" data-toggle="modal" data-target="#signInModal">
+          <button type="button" class="btn btn-secondary hide" id="signInButton" data-toggle="modal" data-target="#signInModal">
             Sign In
           </button>
 
 <!-- change password button trigger modal -->
-          <button type="button" id="changePasswordButton" class="btn btn-primary hide" data-toggle="modal" data-target="#changePasswordModal">
+          <button type="button" id="changePasswordButton" class="btn btn-secondary hide" data-toggle="modal" data-target="#changePasswordModal">
             Change Password
           </button>
 
 <!-- log out button trigger -->
-          <button type="button" class="btn btn-primary hide" id="signOutButton">Log Out</button>
+          <button type="button" class="btn btn-secondary hide" id="signOutButton">Log Out</button>
         </div>
-        </ul>
-    </ul>
 
 
 <!-- Sign Up Modal * COMPLETED *-->
@@ -65,12 +68,16 @@
           <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password">
           <small id="password_confirmHelp" class="form-text text-muted">Confirm your password.</small>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-secondary">Submit</button>
             </form>
           </div>
         </div>
       </div>
     </div>
+  </ul>
+</ul>
+    <button type="button" class="btn btn-secondary" id="start-game">Play a Game</button>
+    <button type="button" class="btn btn-secondary" id="index-game">Find Games</button>
 
 <!-- Sign In Modal * COMPLETED *-->
     <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -92,7 +99,7 @@
           <label>Password</label>
           <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Sign In</button>
+        <button type="submit" class="btn btn-secondary">Sign In</button>
             </form>
           </div>
         </div>
@@ -119,7 +126,7 @@
           <label>New Password</label>
           <input name="passwords[new]" type="password" class="form-control" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-secondary">Save changes</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -128,10 +135,12 @@
       </div>
     </div>
 
-            <h1>Tic Tac Toe</h1>
-
-            <button type="button" class="btn btn-primary" id="start-game">Play a Game</button>
-            <button type="button" class="btn btn-primary" id="index-game">Find Games</button>
+          <div class="container">
+            <h1>Tic Tac Toe.xo</h1>
+            <p class="rules">
+              The object of Tic Tac Toe is to get three in a row. You play on a three by three game board. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled. X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game.
+            </p>
+          </div>
             <div id="user-message">
             </div>
 
@@ -153,5 +162,9 @@
           <div id="cell9" class="col-4 box">&nbsp;</div>
         </div>
       </div>
+
+      <footer class="clearfix">
+	       <p class="message">Created by Jenny Northcott at General Assembly. 2019.</p>
+      </footer>
     </body>
 </html>

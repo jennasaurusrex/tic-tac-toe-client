@@ -2,9 +2,43 @@
 $background-color: #008080;
 $white-color: #fff;
 $black-color: #000;
+$grey-color: #808080;
+$reg-font: 'Quicksand', sans-serif;
+$title-font: 'Pacifico', cursive;
+
+body {
+  background-color: $black-color;
+}
+
+h1 {
+  color: $grey-color;
+  display: flex;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  justify-content: center;
+}
+
+img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+
+.rules {
+  color: $white-color;
+  font: $reg-font;
+  font-size: 20px;
+}
 
 .hide {
   visibility: hidden;
+}
+
+.header {
+  background-color: $black-color;
+  display: flex;
+  justify-content: center;
 }
 
 .box {
@@ -16,4 +50,9 @@ $black-color: #000;
   height: 25.3vh;
   justify-content: center;
   width: 70%;
+}
+
+.message {
+  color: $white-color;
+  float: right;
 }

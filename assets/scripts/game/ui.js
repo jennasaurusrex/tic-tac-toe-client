@@ -9,6 +9,8 @@ const onStartGameSuccess = (response) => {
     const cellId = 'cell' + i.toString()
     $(cellId).text = cells[i]
   }
+  store.game = response.game
+  // console.log('store is', store)
 }
 const onStartGameFailure = (response) => {
   console.log('response is' + response)
@@ -22,10 +24,12 @@ const onFindGamesFailure = (response) => {
   $('#user-message').text('Error finding games.')
 }
 const onUpdateGameSuccess = (response) => {
-  console.log('response is ' + response)
+  console.log('response is: ', response)
+  store.game = response.game
+  console.log('store is ', store.game)
 }
 const onUpdateGameFailure = (response) => {
-  console.log('response is' + response)
+  console.log('response is: ', response)
   $('#user-message').text('Error updating game.')
 }
 

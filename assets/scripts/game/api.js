@@ -23,9 +23,10 @@ const findGames = () => {
     }
   })
 }
-const updateGame = (index, value) => {
+const updateGame = (id, value) => {
+  console.log('store.game is: ', store.game)
   return $.ajax({
-    url: config.apiUrl + 'games/' + store.game,
+    url: config.apiUrl + '/games/' + store.game,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
@@ -34,7 +35,7 @@ const updateGame = (index, value) => {
     data: JSON.stringify({
       'game': {
         'cell': {
-          'index': index,
+          'index': id,
           'value': value
         },
         over: false
