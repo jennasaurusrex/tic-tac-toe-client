@@ -2,11 +2,9 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require('./api')
-const logic = require('./logic')
 
 const onStartGame = (event) => {
   event.preventDefault()
-  logic.playerTurn = 0
   const data = getFormFields(event.target)
   // console.log(data)
   api.startGame(data)
