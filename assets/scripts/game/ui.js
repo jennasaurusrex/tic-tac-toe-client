@@ -12,25 +12,25 @@ const onStartGameSuccess = (response) => {
   store.game = gameData
   $('.box').html('')
   $('#user-message').text('Successfully created a new game. Player ones turn.')
-  console.log('store.game is:', store.game)
-  // console.log('store is', store)
+  // console.log('store.game is:', store.game)
+  // // console.log('store is', store)
 }
 const onStartGameFailure = (response) => {
-  console.log('response is' + response)
+  // console.log('response is' + response)
   $('#user-message').text('Error creating a game.')
 }
 const onFindGamesSuccess = (response) => {
   $('#user-message').text(`Game Plays: ${response.games.length}`)
 }
 const onFindGamesFailure = (response) => {
-  console.log('response is' + response)
+  // console.log('response is' + response)
   $('#user-message').text('Error finding games.')
 }
 const onUpdateGameSuccess = (response) => {
-  console.log('success response is: ', response)
+  // console.log('success response is: ', response)
 }
 const onUpdateGameFailure = (response) => {
-  console.log('response is: ', response)
+  // console.log('response is: ', response)
   $('#user-message').text('Error updating game.')
 }
 

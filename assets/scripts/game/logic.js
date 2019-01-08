@@ -59,7 +59,7 @@ const onClick = (id, cellId) => {
     $(id).html('<p>X</p>')
     $('#user-message').text('Player 2s turn')
     cells.splice(cellId, 1, 'X')
-    // console.log(cells)
+    // // console.log(cells)
     events.onUpdateGame(cellId, 'X')
     turnCount()
   } else if (playerTurn % 2 === 1) {
