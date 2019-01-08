@@ -24,6 +24,7 @@ const findGames = () => {
   })
 }
 const updateGame = (id, value) => {
+  console.log('hi')
   return $.ajax({
     url: config.apiUrl + 'games/' + store.game.id,
     method: 'PATCH',

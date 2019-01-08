@@ -1,8 +1,8 @@
 'use strict'
 const store = require('../store')
-const logic = require('./logic')
 
 const onStartGameSuccess = (response) => {
+  $('#game-board').removeClass('hide')
   const gameData = response.game
   const cells = gameData.cells
   for (let i = 0; i < cells.length; i++) {
@@ -10,6 +10,7 @@ const onStartGameSuccess = (response) => {
     $(cellId).text = cells[i]
   }
   store.game = gameData
+  $('.box').html('')
   $('#user-message').text('Successfully created a new game. Player ones turn.')
   console.log('store.game is:', store.game)
   // console.log('store is', store)

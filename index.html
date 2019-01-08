@@ -37,9 +37,8 @@
 <!-- log out button trigger -->
           <button type="button" class="btn btn-secondary hide" id="signOutButton">Log Out</button>
 <br />
-              <button type="button" class="btn btn-secondary" id="start-game">Play a Game</button>
-              <button type="button" class="btn btn-secondary" id="index-game">Find Games</button>
-              <button type="button" class="btn btn-secondary" id="reset board">New Game</button>
+              <button type="button" class="btn btn-secondary hide" id="start-game">Play a Game</button>
+              <button type="button" class="btn btn-secondary hide" id="index-game">Find Games</button>
         </div>
 
 
@@ -141,11 +140,11 @@
               The object of Tic Tac Toe is to get three in a row. You play on a three by three game board. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either oppent has three in a row or all nine squares are filled. X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game.
             </p>
           </div>
-            <div id="user-message">
+            <div id="user-message" class="container umsg">
             </div>
 
 <!-- Game board divs-->
-      <div class="container" id="game-board">
+      <div class="container hide" id="game-board">
         <div class="row row1">
           <div id="cell1" class="col-4 box">&nbsp;</div>
           <div id="cell2" class="col-4 box">&nbsp;</div>

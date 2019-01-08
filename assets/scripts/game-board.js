@@ -1,9 +1,8 @@
 'use strict'
-//const store = require('./store')
+// const store = require('./store')
 
-
-//const checkForWinner = () => {
-////  $('#user-message').text('Checking for winner...')
+// const checkForWinner = () => {
+/// /  $('#user-message').text('Checking for winner...')
 
 //  if (store.game.isOver === true) {
 //    if (gameBoard === true && currentPlayer === playerX) {
@@ -14,4 +13,4 @@
 //  } else {
 //    $('#user-message').text('Next player turn.')
 //  }
-//}
+// }

@@ -20,6 +20,7 @@ const onFindGames = (event) => {
     .catch(ui.onFindGamesFailure)
 }
 const onUpdateGame = (id, value) => {
+  // console.log('hello')
   api.updateGame(id, value)
     .then(ui.onUpdateGameSuccess)
     .catch(ui.onUpdateGameFailure)

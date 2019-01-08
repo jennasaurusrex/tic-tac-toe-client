@@ -1,6 +1,5 @@
 'use strict'
 const store = require('../store')
-const gameLogic = require('./../game/logic')
 
 const onSignUpSuccess = (response) => {
   $('#user-message').text('Successfully signed up')
@@ -15,6 +14,8 @@ const onSignInSuccess = (response) => {
   $('#signOutButton').removeClass('hide')
   $('#signInButton').addClass('hide')
   $('#signUpButton').addClass('hide')
+  $('#start-game').removeClass('hide')
+  $('#index-game').removeClass('hide')
 }
 const onSignInFailure = (response) => {
   $('#user-message').text('Error signing in. Try again.')
@@ -32,7 +33,9 @@ const onSignOutSuccess = () => {
   $('#signUpButton').removeClass('hide')
   $('#changePasswordButton').addClass('hide')
   $('#signOutButton').addClass('hide')
-  gameLogic.onResetBoard()
+  $('#start-game').addClass('hide')
+  $('#index-game').addClass('hide')
+  $('#game-board').addClass('hide')
 }
 const onSignOutFailure = (response) => {
   $('#user-message').text('Error signing out. Try again.')
