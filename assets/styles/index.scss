@@ -54,13 +54,8 @@ img {
   width: 70%;
 }
 
-.message {
-  color: $white-color;
-  float: right;
-}
-
 .umsg {
-  justify-content: center;
   color: $white-color;
   display: flex;
+  justify-content: center;
 }
