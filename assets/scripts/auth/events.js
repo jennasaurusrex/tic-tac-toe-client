@@ -38,8 +38,8 @@ const onChangePassword = event => {
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
 
-  $('form').trigger('reset')
   $('#changePasswordModal').modal('hide')
+  $('form').trigger('reset')
 }
 
 const onSignOut = (event) => {
