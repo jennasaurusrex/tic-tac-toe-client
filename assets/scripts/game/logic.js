@@ -43,8 +43,9 @@ const checkForWinner = () => {
     checkPlayer(cells[0])
   } else if (cells[2] === cells[4] && cells[4] === cells[6]) {
     checkPlayer(cells[2])
-  } else if (!store.game.cells.some('')) {
-    $('#user-message').text('Tie Game! Play again?')
+  } else if (cells.every((cell) => { return cell !== '' })) {
+  // (!cells.some('')) {
+    $('#user-message').text('Tie Game!')
     endGame()
   }
 }
