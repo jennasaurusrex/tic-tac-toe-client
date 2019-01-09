@@ -2,6 +2,7 @@ $secondary: #b784a7;
 
 @import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Pacifico|Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Coiny');
 
 $background-color: #008080;
 $white-color: #fff;
@@ -102,6 +103,7 @@ button {
 .xo {
   color: $white-color;
   font-size: 5rem;
+  font-family: 'Coiny', cursive;
 }
 
 .x {
