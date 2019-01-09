@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div class="header">
+        <img class="xo" src="https://imgur.com/djt2eYo.jpg" alt="tictactoe-img">
+      </div>
+      <div class="container">
+      <ul class="nav">
+      <li class="nav-item">
+
+<!-- sign up button trigger modal -->
+          <button type="button" class="btn btn-secondary hide" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
+            Sign Up
+          </button>
+        </li>
+
+<!-- sign in button trigger modal -->
+          <li><button type="button" class="btn btn-secondary hide" id="signInButton" data-toggle="modal" data-target="#signInModal">
+            Sign In
+          </button></li>
+
+<!-- change password button trigger modal -->
+          <li><button type="button" id="changePasswordButton" class="btn btn-secondary hide" data-toggle="modal" data-target="#changePasswordModal">
+            Change Password
+          </button></li>
+
+<!-- log out button trigger -->
+        <li>
+          <button type="button" class="btn btn-secondary hide" id="signOutButton">Log Out</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-secondary hide" id="start-game">Start Game</button>
+        </li>
+        <li>
+              <button type="button" class="btn btn-secondary hide" id="index-game">Find Games</button>
+        </li>
+      </ul>
+      </div>
+
+
+<!-- Sign Up Modal * COMPLETED *-->
+    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Sign up to play!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up">
+        <div class="form-group">
+          <label>Email address</label>
+          <input name ="credentials[email]" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+          <small id="passwordHelp" class="form-text text-muted">Enter a password you'll remember!</small>
+        </div>
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password">
+          <small id="password_confirmHelp" class="form-text text-muted">Confirm your password.</small>
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Sign In Modal * COMPLETED *-->
+    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign In</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="sign-in">
+        <div>
+          <label>Email address</label>
+          <input name ="credentials[email]" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div>
+          <label>Password</label>
+          <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-secondary">Sign In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Change Password Modal * COMPLETED* -->
+    <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+        <div class="form-group">
+          <label>Current Password</label>
+          <input name="passwords[old]" type="password" class="form-control" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <label>New Password</label>
+          <input name="passwords[new]" type="password" class="form-control" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-secondary">Save changes</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+    </div>
+
+          <div class="container">
+            <h1>Tic Tac Toe.<span class="x">x</span>o</h1>
+            <p class="rules">
+              The object of Tic Tac Toe is to get three in a row. You play on a three by three game board. The first player is known as X and the second is O. Players alternate placing Xs and Os on the game board until either opponent has three in a row or all nine squares are filled. X always goes first, and in the event that no one has three in a row, the stalemate is called a cat game.
+            </p>
+          </div>
+            <div id="user-message" class="container umsg">
+            </div>
+
+<!-- Game board divs-->
+    <div class="container mt-4 hide" id="game-board">
+      <div class="row row1">
+        <div id="cell1" class="col-4 box">&nbsp;</div>
+        <div id="cell2" class="col-4 box">&nbsp;</div>
+        <div id="cell3" class="col-4 box">&nbsp;</div>
+
+        <div id="cell4" class="col-4 box">&nbsp;</div>
+        <div id="cell5" class="col-4 box">&nbsp;</div>
+        <div id="cell6" class="col-4 box">&nbsp;</div>
+
+        <div id="cell7" class="col-4 box">&nbsp;</div>
+        <div id="cell8" class="col-4 box">&nbsp;</div>
+        <div id="cell9" class="col-4 box">&nbsp;</div>
+      </div>
+    </div>
+
+    <footer class="clearfix">
+	       <p class="message">Created by Jenny Northcott at General Assembly. 2019.</p>
+    </footer>
+    </body>
+</html>
