@@ -12,6 +12,7 @@ const onStartGameSuccess = (response) => {
   store.game = gameData
   $('.box').html('')
   $('#user-message').text('Successfully created a new game. Player ones turn.')
+  store.turn = 0
   // console.log('store.game is:', store.game)
   // // console.log('store is', store)
 }
