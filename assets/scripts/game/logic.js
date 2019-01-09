@@ -60,7 +60,7 @@ const onClick = (id, cellId) => {
   } else if ($(id).is(":contains('X')") || $(id).is(":contains('O')")) {
     $('#user-message').text('Please choose an empty cell!')
   } else if (store.turn % 2 === 0) {
-    $(id).html('<p class="xo">X</p>')
+    $(id).html('<p class="xo"><span class="x">X</span></p>')
     $('#user-message').text('Player 2s turn')
     cells.splice(cellId, 1, 'X')
     // // console.log(cells)
