@@ -60,14 +60,14 @@ const onClick = (id, cellId) => {
   } else if ($(id).is(":contains('X')") || $(id).is(":contains('O')")) {
     $('#user-message').text('Please choose an empty cell!')
   } else if (store.turn % 2 === 0) {
-    $(id).html('<p>X</p>')
+    $(id).html('<p class="xo">X</p>')
     $('#user-message').text('Player 2s turn')
     cells.splice(cellId, 1, 'X')
     // // console.log(cells)
     events.onUpdateGame(cellId, 'X')
     turnCount()
   } else if (store.turn % 2 === 1) {
-    $(id).html('<p>O</p>')
+    $(id).html('<p class="xo">O</p>')
     $('#user-message').text('Player 1s turn')
     cells.splice(cellId, 1, 'O')
     events.onUpdateGame(cellId, 'O')
