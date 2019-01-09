@@ -16,6 +16,7 @@ const onSignInSuccess = (response) => {
   $('#signUpButton').addClass('hide')
   $('#start-game').removeClass('hide')
   $('#index-game').removeClass('hide')
+  store.turn = 0
 }
 const onSignInFailure = (response) => {
   $('#user-message').text('Error signing in. Try again.')
@@ -36,6 +37,7 @@ const onSignOutSuccess = () => {
   $('#start-game').addClass('hide')
   $('#index-game').addClass('hide')
   $('#game-board').addClass('hide')
+  store.turn = 0
 }
 const onSignOutFailure = (response) => {
   $('#user-message').text('Error signing out. Try again.')

@@ -2,16 +2,20 @@
 const events = require('./events')
 const store = require('../store')
 
+store.turn = 0
+
 let cells = ['', '', '', '', '', '', '', '', '']
-let playerTurn = 0
+
 const turnCount = () => {
-  playerTurn += 1
-  checkForWinner()
+  store.turn += 1
+  if (store.turn >= 5) {
+    checkForWinner()
+  }
 }
 
 const endGame = () => {
   store.game.over = true
-  playerTurn = 0
+  store.turn = 0
   cells = ['', '', '', '', '', '', '', '', '']
   return $('#user-message').append(' Game Over!')
 }
@@ -29,19 +33,19 @@ const checkPlayer = (player) => {
 const checkForWinner = () => {
   if (cells[0] === cells[1] && cells[1] === cells[2]) {
     checkPlayer(cells[0])
-  } else if (cells[3] === cells[4] && cells[4] === cells[5]) {
+  } else if (cells[3] === cells[4] && cells[4] === cells[5] && cells[3] !== '') {
     checkPlayer(cells[3])
-  } else if (cells[6] === cells[7] && cells[7] === cells[8]) {
+  } else if (cells[6] === cells[7] && cells[7] === cells[8] && cells[6] !== '') {
     checkPlayer(cells[6])
-  } else if (cells[0] === cells[3] && cells[3] === cells[6]) {
+  } else if (cells[0] === cells[3] && cells[3] === cells[6] && cells[0] !== '') {
     checkPlayer(cells[0])
-  } else if (cells[1] === cells[4] && cells[4] === cells[7]) {
+  } else if (cells[1] === cells[4] && cells[4] === cells[7] && cells[1] !== '') {
     checkPlayer(cells[1])
-  } else if (cells[2] === cells[5] && cells[5] === cells[8]) {
+  } else if (cells[2] === cells[5] && cells[5] === cells[8] && cells[2] !== '') {
     checkPlayer(cells[2])
-  } else if (cells[0] === cells[4] && cells[4] === cells[8]) {
+  } else if (cells[0] === cells[4] && cells[4] === cells[8] && cells[0] !== '') {
     checkPlayer(cells[0])
-  } else if (cells[2] === cells[4] && cells[4] === cells[6]) {
+  } else if (cells[2] === cells[4] && cells[4] === cells[6] && cells[2] !== '') {
     checkPlayer(cells[2])
   } else if (cells.every((cell) => { return cell !== '' })) {
   // (!cells.some('')) {
@@ -55,14 +59,14 @@ const onClick = (id, cellId) => {
     return $('#user-message').text('Click Start Game to begin a new game.')
   } else if ($(id).is(":contains('X')") || $(id).is(":contains('O')")) {
     $('#user-message').text('Please choose an empty cell!')
-  } else if (playerTurn % 2 === 0) {
+  } else if (store.turn % 2 === 0) {
     $(id).html('<p>X</p>')
     $('#user-message').text('Player 2s turn')
     cells.splice(cellId, 1, 'X')
     // // console.log(cells)
     events.onUpdateGame(cellId, 'X')
     turnCount()
-  } else if (playerTurn % 2 === 1) {
+  } else if (store.turn % 2 === 1) {
     $(id).html('<p>O</p>')
     $('#user-message').text('Player 1s turn')
     cells.splice(cellId, 1, 'O')

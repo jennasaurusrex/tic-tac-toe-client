@@ -14,7 +14,7 @@ This project was really fun for me! I thought I had the entire project mapped ou
 
 ## UNSOLVED PROBLEMS:
 I would like to edit my game logic to be more DRY.
-Fix button bug.
+Fix button bug.[COMPLETE]
 
 ## WIREFRAMES & USER STORIES:
 - user should be able to sign in
